@@ -33,7 +33,11 @@ async function start (opts) {
     process.exit(1);
   }
 }
-
+/*
+fonction start : recupere la valeur de opts
+format opt : ammout (montant), from (monnaie a convertir), to (la monnaie dans laquel on veut convertir)
+result : resultat de la convertion
+*/
 if (argv.indexOf('--help') !== - 1) {
   help();
   process.exit(0);
@@ -46,5 +50,9 @@ const opts = {
   'from': (argv[1] || 'USD').toUpperCase(),
   'to': (argv[2] || 'BTC').toUpperCase()
 };
-
+/*
+ammount : prend la valeur de 1 si aucun valeur n est entrée
+from : prend la valeur USD par defaut sinon prend la valeur mis en argument en majuscule
+to : pareil mais avec BTC
+*/
 start(opts);
