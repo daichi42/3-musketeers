@@ -1,5 +1,5 @@
 const nock = require('nock');
-
+const cli = require('./cli')
 beforeEach(() => {
   nock('https://api.exchangeratesapi.io')
     .get('/latest?base=USD')
@@ -40,7 +40,7 @@ beforeEach(() => {
 });
 
 test('convert 1 USD to EUR', async () => {
-  throw new Error('test not yet defined... remove the throw and write your test here');
+  cli.module.exports.start();
 });
 
 test('convert 1 USD to USD', async () => {

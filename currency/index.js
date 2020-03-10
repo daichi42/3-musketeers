@@ -48,7 +48,8 @@ module.exports = async opts => {
         'from': to,
         'to': from
       });
-
+    }
+    
     return money.convert(amount, conversionOpts);
   } catch (error) {
     throw new Error (
