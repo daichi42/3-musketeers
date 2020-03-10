@@ -98,19 +98,20 @@ test('convert without arguments', async () => {
 });
 
 test('convert with amount only', async () => {
-  var ammount = 50
-  result = await currency({ammount})
+  var amount = 2
+  const opts = {amount}
+  result = await currency(opts)
   console.log("convert convert with amount only")
-  console.log(`${ammount} ${"USD"} = ${result} ${"BTC"}`)
+  console.log(`${amount} ${"USD"} = ${result} ${"BTC"}`)
 });
 
 test('convert with amount and (from) currency only', async () => {
-  var ammount = 50
+  var amount = 15
   var from = 'EUR'
-  const opts = {ammount,from}
+  const opts = {amount,from}
   result = await currency(opts)
   console.log("convert convert with amount only and (from) currency only")
-  console.log(`${ammount} ${from} = ${result} ${"BTC"}`)
+  console.log(`${amount} ${from} = ${result} ${"BTC"}`)
 });
 
 test('convert without a correct `from` or `to` currency value', async () => {
